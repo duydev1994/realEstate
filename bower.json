@@ -1,0 +1,22 @@
+{
+  "name": "news",
+  "description": "",
+  "main": "",
+  "authors": [
+    "DUY TRAN <duydev@hotmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+
+  }
+}
