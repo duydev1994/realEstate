@@ -5,6 +5,7 @@
  * @email <DUY TRAN duydev@hotmail.com>
  * */
 
+Route::get('/', ['as' => 'index', 'uses' => 'ArticlesController@getIndex']);
 
 Route::group(['as' => 'categories.', 'prefix' => 'categories'], function () {
     Route::get('/', ['as' => 'index', 'uses' => 'CategoriesController@getIndex']);

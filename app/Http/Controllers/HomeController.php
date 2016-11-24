@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function getIndex()
     {
-        $articles = Post::where('status', Post::STATUS_PUBLISHED)->paginate(15);
+        $articles = Post::where('status', Post::STATUS_PUBLISHED)->orderBy('updated_at')->paginate(15);
         $category = new Category();
         $search = null;
         return view('site.home', compact('articles', 'category', 'search'));
@@ -37,11 +37,18 @@ class HomeController extends Controller
         }
         $postId = $matches[1];
         $tops = Post::where('id', '!=', $postId)->skip(0)->take(20)->get();
+
         $article = Post::with('category')->find($postId);
+        $relatedPost = Post::where([
+            ['id', '!=', $postId],
+            ['category_id', $article->category_id]
+        ])->first();
+
         if (!$article) {
             abort(404);
         }
-        return view('site.view', compact('article', 'tops'));
+
+        return view('site.view', compact('article', 'tops', 'relatedPost'));
     }
 
     public function getContact()
@@ -55,7 +62,7 @@ class HomeController extends Controller
             ['status', Post::STATUS_PUBLISHED],
             ['category_id', $request->get('search_category')],
             ['title', 'like', '%' . $request->get('search_text') . '%']
-        ])->paginate(15);
+        ])->orderBy('updated_at')->paginate(15);
 
         $category = new Category();
         $search = [
