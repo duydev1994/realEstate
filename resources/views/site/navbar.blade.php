@@ -3,7 +3,7 @@
         <div class="header-left">
             <div class="logo logo-desktop">
                 <a href="/">
-                    <img src="/logo-houzez-white.png" alt="logo">
+                    <img style="height: 30px" src="/logo.png" alt="logo">
                 </a>
             </div>
             <nav class="navi main-nav">
@@ -51,17 +51,30 @@
         </div>
     </div>
 </div>
+<!--end section header-->
+<div class="header-mobile houzez-header-mobile  visible-sm visible-xs" data-sticky="0">
+    <div class="container">
+        <!--start mobile nav-->
+        <div class="mobile-nav">
+            <span class="nav-trigger"><i class="fa fa-navicon"></i></span>
+            <div class="nav-dropdown main-nav-dropdown"></div>
+        </div>
+        <!--end mobile nav-->
+        <div class="header-logo logo-mobile">
+            <a href="/">
+                <img src="/logo.png" alt="logo">
+            </a></div>
+    </div>
+</div>
+
 <div class="advanced-search-mobile houzez-adv-price-range" data-sticky='0'>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 {!! Form::open(array('method' => 'get','url' => route('search'))) !!}
                 <div class="single-search-wrap">
-                    <div class="single-search-inner advance-btn">
-                        <button class="table-cell text-left" type="button"><i class="fa fa-gear"></i></button>
-                    </div>
                     <div class="single-search-inner single-search">
-                        <input type="text" class="form-control" value="" name="keyword" placeholder="Enter an address, town, street, zip or property ID">
+                        <input type="text" class="form-control" value="" name="keyword" placeholder="Vui lòng nhập từ khóa cần tìm?">
                     </div>
                     <div class="single-search-inner single-seach-btn">
                         <button class="table-cell text-right" type="submit"><i class="fa fa-search"></i></button>
@@ -84,3 +97,4 @@
         </div>
     </div>
 </div>
+

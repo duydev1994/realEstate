@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title') </title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
 
     <link rel='stylesheet' href='{{asset('assets/site/css/bootstrap.css')}}' type='text/css' media='all'/>
     <link rel='stylesheet' href='{{asset('assets/site/css/bootstrap-select.css')}}' type='text/css' media='all'/>
@@ -28,21 +29,6 @@
 @inject('Home', 'App\Http\Controllers\HomeController')
 <!-- HEADER -->
 {!!   $Home->getNavBar() !!}
-<!--end section header-->
-<div class="header-mobile houzez-header-mobile  visible-sm visible-xs" data-sticky="0">
-    <div class="container">
-        <!--start mobile nav-->
-        <div class="mobile-nav">
-            <span class="nav-trigger"><i class="fa fa-navicon"></i></span>
-            <div class="nav-dropdown main-nav-dropdown"></div>
-        </div>
-        <!--end mobile nav-->
-        <div class="header-logo logo-mobile">
-            <a href="index.html">
-                <img src="/logo-houzez-white.png" alt="Mobile logo">
-            </a></div>
-    </div>
-</div>
 
 <!--start advanced search section-->
 
