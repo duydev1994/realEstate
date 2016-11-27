@@ -20,8 +20,7 @@
                                                             {!! $item->category?'<span class="label-featured label label-success">'.$item->category->title.'</span>':'' !!}
                                                             <div class="price hide-on-list"><span class="item-price">{{$item->money}}</span><span class="item-sub-price"></span></div>
                                                             <a class="hover-effect" href="{{route('view',$item->slug.'-'.$item->id)}}">
-                                                                <img width="385" height="258" src="{{show_content_picture($item->picture_1)}}" class="attachment-houzez-property-thumb-image size-houzez-property-thumb-image wp-post-image"
-                                                                     alt="{{$item->title}}"/> </a>
+                                                                <img width="385" height="258" src="{{show_content_picture($item->picture_1)}}" class="attachment-houzez-property-thumb-image size-houzez-property-thumb-image wp-post-image" alt="{{$item->title}}"/> </a>
                                                         </figure>
                                                     </div>
                                                 </div>

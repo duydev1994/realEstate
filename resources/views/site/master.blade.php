@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title') </title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
     <link rel='stylesheet' href='{{asset('assets/site/css/bootstrap.css')}}' type='text/css' media='all'/>
     <link rel='stylesheet' href='{{asset('assets/site/css/bootstrap-select.css')}}' type='text/css' media='all'/>
@@ -22,6 +23,17 @@
     <link rel='stylesheet' href='{{asset('assets/site/style.css')}}' type='text/css' media='all'/>
     <script type='text/javascript' src='{{asset('assets/site/js/jquery/jquery.js')}}'></script>
     <script type='text/javascript' src='{{asset('assets/site/js/jquery/jquery-migrate.min.js')}}'></script>
+
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    @yield('style')
 </head>
 <body class="home page page-id-1531 page-template page-template-template page-template-template-homepage page-template-templatetemplate-homepage-php  transparent- wpb-js-composer js-comp-ver-4.12.1 vc_responsive">
 <!--start section header-->
@@ -128,14 +140,7 @@
 <script type='text/javascript' src='{{asset('assets/site/js/jquery/ui/menu.min.js')}}'></script>
 
 
-<script type="text/javascript">(function () {
-        function addEventListener(element, event, handler) {
-            if (element.addEventListener) {
-                element.addEventListener(event, handler, false);
-            } else if (element.attachEvent) {
-                element.attachEvent('on' + event, handler);
-            }
-        }
-    })();</script>
+@yield('script')
+
 </body>
 </html>

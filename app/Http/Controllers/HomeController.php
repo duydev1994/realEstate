@@ -36,19 +36,18 @@ class HomeController extends Controller
             abort(404);
         }
         $postId = $matches[1];
-        $tops = Post::where('id', '!=', $postId)->skip(0)->take(20)->get();
-
+        $tops = Post::where('id', '!=', $postId)->skip(0)->take(5)->get();
         $article = Post::with('category')->find($postId);
-        $relatedPost = Post::where([
+        $relatedPosts = Post::where([
             ['id', '!=', $postId],
-            ['category_id', $article->category_id]
-        ])->first();
-
+            ['category_id', $article->category_id],
+        ])->skip(0)->take(2)->get();
+//        return response()->json($relatedPost);
         if (!$article) {
             abort(404);
         }
 
-        return view('site.view', compact('article', 'tops', 'relatedPost'));
+        return view('site.view', compact('article', 'tops', 'relatedPosts'));
     }
 
     public function getContact()
