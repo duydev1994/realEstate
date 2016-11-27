@@ -8,15 +8,29 @@
 
             <!-- BLOG POSTS -->
             @if($category->id)
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="breadcrumbs">
-                                <a href="/"><i class="fa fa-home" aria-hidden="true"></i> Trang Chủ</a>
-                                <span class="sep">/</span>
-                                <span class="current">{{$category->title}}</span>
-                            </div>
+                123123
+                <div class="col-sm-12">
+                    <div class="header-detail table-list">
+                        <div class="header-left">
+                            <ol class="breadcrumb">
+                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="/"><i class="fa fa-home"></i></a></li>
+                                <li><a href="{{ route('danhmuc',$article->category->slug) }}">{{$article->category->title}}</a></li>
+                                <li class="active">{{$article->title}}</li>
+                            </ol>
+                            <h1>{{$article->title}}
+                                <span class="label-wrap">
+                                    <span class="label label-primary label-status-7"><a style="color: white" href="{{ route('danhmuc',$article->category->slug) }}">{{$article->category->title}}</a></span></span>
+                            </h1>
+                            <address class="property-address"><i class="fa fa-map-marker"></i> {{$article->location}}</address>
                         </div>
+                        <div class="header-right">
+                            <ul class="actions">
+                                <li class="share-btn">
+                                    <div class="fb-share-button" data-href="{{route('view',$article->slug.'-'.$article->id)}}" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                                        <a class="fb-xfbml-parse-ignore" target="_blank" href="{{route('view',$article->slug.'-'.$article->id)}}">Chiasẻ</a></div>
+                                </li>
+                            </ul>
+                            <span class="item-price">{{$article->money}}</span></div>
                     </div>
                 </div>
             @endif

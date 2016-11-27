@@ -29,7 +29,7 @@
                         <div class="form-group no-margin">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-search"></i></div>
-                                <input type="text" id="keyword" class="form-control" value="" name="keyword" placeholder="Vui lòng nhập từ khóa cần tìm?">
+                                <input type="text" id="keyword" class="form-control" value="" name="search_text" placeholder="Vui lòng nhập từ khóa cần tìm?">
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                 {!! Form::open(array('method' => 'get','url' => route('search'))) !!}
                 <div class="single-search-wrap">
                     <div class="single-search-inner single-search">
-                        <input type="text" class="form-control" value="" name="keyword" placeholder="Vui lòng nhập từ khóa cần tìm?">
+                        <input type="text" class="form-control" value="" name="search_text" placeholder="Vui lòng nhập từ khóa cần tìm?">
                     </div>
                     <div class="single-search-inner single-seach-btn">
                         <button class="table-cell text-right" type="submit"><i class="fa fa-search"></i></button>
