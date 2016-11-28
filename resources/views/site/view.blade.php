@@ -145,6 +145,15 @@
                                 </div>
                                 <hr>
                             </div>
+
+                            <div id="houzez_properties_viewed-2" class="widget widget_houzez_properties_viewed">
+                                <div class="widget-top"><h3 class="widget-title">Bình Luận</h3></div>
+                                <div class="widget-body">
+                                    <div class="fb-comments" data-width="100%" data-href="{{route('view',$article->slug.'-'.$article->id)}}" data-numposts="5"></div>
+                                </div>
+
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-md-offset-0 col-sm-offset-3 container-sidebar houzez_sticky" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
