@@ -80,18 +80,16 @@
                                         <a target="_blank" href="http://maps.google.com/?q=9400%20E%20Broadview%20Dr,%20Bay%20Harbor%20Islands,%20FL%2033154,%20Stati%20Uniti">Open on Google Maps <i class="fa fa-map-marker"></i></a>
                                     </div>
                                 </div>
-                                <div id="map"></div>
+                                <div id="map" style="width:100%;height:500px"></div>
+
                                 <script>
-                                    function initMap() {
-                                        var uluru = {lat: -25.363, lng: 131.044};
-                                        var map = new google.maps.Map(document.getElementById('map'), {
-                                            zoom: 4,
-                                            center: uluru
-                                        });
-                                        var marker = new google.maps.Marker({
-                                            position: uluru,
-                                            map: map
-                                        });
+                                    function myMap() {
+                                        var mapCanvas = document.getElementById("map");
+                                        var mapOptions = {
+                                            center: new google.maps.LatLng(51.5, -0.2),
+                                            zoom: 20
+                                        }
+                                        var map = new google.maps.Map(mapCanvas, mapOptions);
                                     }
                                 </script>
                             </div>
@@ -201,7 +199,7 @@
     </style>
 @endsection
 @section('script')
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeEM2bfdkRNAX357gCDsV__486le-3w9s&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
     <script src="{{asset('assets/site/video.js/dist/video.min.js')}}"></script>
     <script src="{{asset('assets/site/js/Youtube.min.js')}}"></script>
 
