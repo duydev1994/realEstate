@@ -24,6 +24,21 @@
     <script type='text/javascript' src='{{asset('assets/site/js/jquery/jquery.js')}}'></script>
     <script type='text/javascript' src='{{asset('assets/site/js/jquery/jquery-migrate.min.js')}}'></script>
 
+    <style>
+        #backToTop {
+            width: 40px;
+            height: 40px;
+            opacity: 0.5;
+            position: fixed;
+            bottom: 40px;
+            left: 96%;
+            display: none;
+            text-indent: -10000px;
+            outline: none !important;
+            background-image: url('/assets/img/icon-back-to-top.png');
+            background-repeat: no-repeat;
+        }
+    </style>
     <div id="fb-root"></div>
     <script>(function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -126,8 +141,8 @@
         </div>
 
     </div><!-- End footer bottom -->
-
 </footer>
+<a href="#" ID="backToTop"></a>
 <script type='text/javascript' src='{{asset('assets/site/js/bootstrap.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/site/js/slick.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/site/js/jquery-ui.js')}}'></script>
@@ -138,7 +153,33 @@
 <script type='text/javascript' src='{{asset('assets/site/js/jquery/ui/widget.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/site/js/jquery/ui/position.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/site/js/jquery/ui/menu.min.js')}}'></script>
+<script>
 
+    $(function () {
+        $(window).scroll(function () {
+            var wrap = $("#wrap");
+            if ($('body').scrollTop() > 147) {
+                wrap.addClass("navbar-fixed-top");
+            } else {
+                wrap.removeClass("navbar-fixed-top");
+            }
+        });
+    });
+
+    jQuery(document).ready(function ($) {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#backToTop').fadeIn('slow');
+            } else {
+                $('#backToTop').fadeOut('slow');
+            }
+        });
+        $('#backToTop').click(function () {
+            $("html, body").scrollTop(0);
+            return false;
+        });
+    });
+</script>
 
 @yield('script')
 

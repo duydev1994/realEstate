@@ -19,7 +19,7 @@
     </div>
 </header>
 
-<div class="advanced-search advance-search-header houzez-adv-price-range " data-sticky='1'>
+<div id="wrap" class="wrap advanced-search advance-search-header houzez-adv-price-range " data-sticky='1'>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -97,4 +97,3 @@
         </div>
     </div>
 </div>
-

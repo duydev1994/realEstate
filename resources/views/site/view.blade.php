@@ -204,4 +204,6 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeEM2bfdkRNAX357gCDsV__486le-3w9s&callback=initMap"></script>
     <script src="{{asset('assets/site/video.js/dist/video.min.js')}}"></script>
     <script src="{{asset('assets/site/js/Youtube.min.js')}}"></script>
+
+
 @endsection
