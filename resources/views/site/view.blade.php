@@ -199,7 +199,7 @@
     </style>
 @endsection
 @section('script')
-    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02OlYUIq5E2JtXf04UNyES_DIYLDWZDE&allback=myMap"></script>
     <script src="{{asset('assets/site/video.js/dist/video.min.js')}}"></script>
     <script src="{{asset('assets/site/js/Youtube.min.js')}}"></script>
 

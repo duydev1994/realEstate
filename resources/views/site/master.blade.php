@@ -48,6 +48,25 @@
             js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-88366883-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
     @yield('style')
 </head>
 <body class="home page page-id-1531 page-template page-template-template page-template-template-homepage page-template-templatetemplate-homepage-php  transparent- wpb-js-composer js-comp-ver-4.12.1 vc_responsive">
