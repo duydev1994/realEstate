@@ -236,7 +236,7 @@
                                     background: #462300;
                                 }
                             </style>
-                            <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 810px; height: 3h00px; overflow: hidden; visibility: hidden; background-color: #000000;">
+                            <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 810px; height: 300px; overflow: hidden; visibility: hidden; background-color: #000000;">
                                 <!-- Loading Screen -->
                                 <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
                                     <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
