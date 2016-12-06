@@ -305,41 +305,40 @@
                                 </div>
                                 {!! $article->content !!}
                             </div>
-                            <div id="address" class="detail-address detail-block target-block">
+                            <div id="address" data-lat="{{$article->latitude}}" data-log="{{$article->longitude}}" class="detail-address detail-block target-block">
                                 <div class="detail-title">
                                     <h2 class="title-left">Bản Đồ</h2>
-                                    <div class="title-right">
-                                        <a target="_blank" href="http://maps.google.com/?q=9400%20E%20Broadview%20Dr,%20Bay%20Harbor%20Islands,%20FL%2033154,%20Stati%20Uniti">Open on Google Maps <i class="fa fa-map-marker"></i></a>
-                                    </div>
                                 </div>
-                                <div id="map" style="width:100%;height:500px"></div>
+                                <div id="map" style="position: relative;z-index:999;width:100%;height:500px"></div>
 
                                 <script>
-                                    function myMap() {
-                                        var mapCanvas = document.getElementById("map");
-                                        var mapOptions = {
-                                            center: new google.maps.LatLng(51.5, -0.2),
-                                            zoom: 20
-                                        }
-                                        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+                                    function initMap() {
+                                        var lat = $('#address').attr('data-lat');
+                                        var lng = $('#address').attr('data-log');
+                                        console.log(lat, lng);
+                                        var uluru = {lat: parseFloat(lat), lng: parseFloat(lng)};
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                            zoom: 15,
+                                            center: uluru
+                                        });
+                                        var marker = new google.maps.Marker({
+                                            position: uluru,
+                                            map: map
+                                        });
                                     }
                                 </script>
                             </div>
-                            <div id="video" class="property-video detail-block target-block">
-                                <div class="detail-title">
-                                    <h2 class="title-left">Video</h2>
+                            @if($article->video)
+                                <div id="video" class="property-video detail-block target-block">
+                                    <div class="detail-title">
+                                        <h2 class="title-left">Video</h2>
+                                    </div>
+                                    <div class="video-block">
+                                        <iframe width="100%" height="390" src="https://www.youtube.com/embed/{{$article->video}}" frameborder="0" allowfullscreen></iframe>
+                                    </div>
                                 </div>
-                                <div class="video-block">
-                                    <video
-                                            id="vid1"
-                                            class="video-js vjs-default-skin"
-                                            controls
-                                            width="730" height="500"
-                                            data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "{{$article->video}}"}] }'
-                                    >
-                                    </video>
-                                </div>
-                            </div>
+                            @endif
                             <div class="property-similer">
                                 <div class="detail-title">
                                     <h2 class="title-left">Bất động sảng liên quan</h2>
@@ -431,7 +430,9 @@
     </style>
 @endsection
 @section('script')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02OlYUIq5E2JtXf04UNyES_DIYLDWZDE&allback=myMap"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02OlYUIq5E2JtXf04UNyES_DIYLDWZDE&callback=initMap">
+    </script>
     <script src="{{asset('assets/site/video.js/dist/video.min.js')}}"></script>
     <script src="{{asset('assets/site/js/Youtube.min.js')}}"></script>
 
