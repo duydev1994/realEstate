@@ -430,11 +430,8 @@
     </style>
 @endsection
 @section('script')
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02OlYUIq5E2JtXf04UNyES_DIYLDWZDE&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02OlYUIq5E2JtXf04UNyES_DIYLDWZDE&callback=initMap">
     </script>
     <script src="{{asset('assets/site/video.js/dist/video.min.js')}}"></script>
     <script src="{{asset('assets/site/js/Youtube.min.js')}}"></script>
-
-
 @endsection

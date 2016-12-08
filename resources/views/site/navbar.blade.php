@@ -13,6 +13,9 @@
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-955"><a class="dropdown-button" href="{{ route('danhmuc',$category->slug) }}">{{ $category->title }}</a></li>
                         @endif
                     @endforeach
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-955">
+                        <a href="{{ route('contact',$category->slug) }}">Giới thiệu</a>
+                    </li>
                 </ul>
             </nav>
         </div>

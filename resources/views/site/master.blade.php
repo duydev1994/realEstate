@@ -161,6 +161,15 @@
 
     </div><!-- End footer bottom -->
 </footer>
+
+<div id="footer">
+    <div class="btn-support">
+        <a target="_blank" href="https://m.me/phuochiep.vo.3">
+            <img src="https://storage.googleapis.com/bybk/assets/landing/messenger-logo-white.png">
+            <span>Tư vấn trực tiếp</span>
+        </a>
+    </div>
+</div>
 <a href="#" ID="backToTop"></a>
 <script type='text/javascript' src='{{asset('assets/site/js/bootstrap.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('assets/site/js/slick.min.js')}}'></script>

@@ -23530,3 +23530,36 @@ h4.ihf-price {
     position: absolute;
     z-index: 1;
 }
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#footer .btn-support {
+    background: #0083ff;
+    margin: 0 89% auto;
+    color: #ffffff;
+    padding: 5px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 300;
+    width: 140px;
+    height: 30px;
+}
+
+#footer .btn-support a {
+    padding: 0px 21px 0px 0px;
+}
+
+#footer .btn-support img {
+    width: 21.7px;
+    height: 22px;
+}
+
+/* For the demo only */
+#footer .btn-support span {
+    color: white;
+    padding: 0 0 0 2px;
+}
