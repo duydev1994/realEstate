@@ -46,6 +46,14 @@
                             <div class="col-sm-3 col-xs-6">
                                 <button type="submit" class="btn btn-orange btn-block houzez-theme-button">Tìm</button>
                             </div>
+                            <div class="nav-contact pull-right">
+                                <p>
+                                    Hotline:
+                                    <span>
+                                     <i class="fa fa-phone-square wolf-ring-ring" aria-hidden="true"></i><a href="tel:09089989"> 09089989</a> (MR. Hiệp)
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
